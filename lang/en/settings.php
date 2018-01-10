@@ -6,7 +6,7 @@
  */
 
 // keys need to match the config setting name
-$lang['always-validate'] = 'Validate the cache of media files by default at each request (unchecked is DokuWiki default behavior)';
+$lang['always-validate'] = 'Validate the browser cache of a media file by default at each request (unchecked is DokuWiki default behavior)';
 
 
 
