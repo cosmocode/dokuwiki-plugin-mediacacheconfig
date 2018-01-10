@@ -2,6 +2,6 @@ base   mediacacheconfig
 author Michael Große
 email  grosse@cosmocode.de
 date   2018-01-10
-name   mediacacheconfig plugin
+name   Mediacache Configuration Plugin
 desc   Allows the configuration default caching behavior for media files
 url    https://dokuwiki.org/plugin:mediacacheconfig

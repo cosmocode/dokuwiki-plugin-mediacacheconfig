@@ -19,8 +19,8 @@ class action_plugin_mediacacheconfig extends DokuWiki_Action_Plugin {
      */
     public function register(Doku_Event_Handler $controller) {
 
-       $controller->register_hook('FETCH_MEDIA_STATUS', 'FIXME', $this, 'handle_fetch_media_status');
-   
+       $controller->register_hook('FETCH_MEDIA_STATUS', 'AFTER', $this, 'handle_fetch_media_status');
+
     }
 
     /**
@@ -32,7 +32,17 @@ class action_plugin_mediacacheconfig extends DokuWiki_Action_Plugin {
      * @return void
      */
 
-    public function handle_fetch_media_status(Doku_Event &$event, $param) {
+    public function handle_fetch_media_status(Doku_Event $event, $param) {
+        global $INPUT;
+
+        if ($INPUT->has('cache')) {
+            // do nothing if cache behavior has been explicitly defined
+            return;
+        }
+
+        if ($this->getConf('always-validate') === '1') {
+            $event->data['cache'] = 0;
+        }
     }
 
 }

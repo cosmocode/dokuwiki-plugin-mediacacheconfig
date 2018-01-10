@@ -6,7 +6,7 @@
  */
 
 // keys need to match the config setting name
-// $lang['fixme'] = 'FIXME';
+$lang['always-validate'] = 'Validate the cache of media files by default at each request (unchecked is DokuWiki default behavior)';
 
 
 
